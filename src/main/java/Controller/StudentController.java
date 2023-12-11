@@ -76,7 +76,7 @@ public class StudentController extends HttpServlet {
     public void delete(HttpServletRequest request , HttpServletResponse response) throws IOException {
         int id = Integer.parseInt(request.getParameter("id"));
         student.delete(id);
-        response.sendRedirect("http://localhost:8080/studentc08?action=home");
+        response.sendRedirect("http://localhost:8080/studentgit?action=home");
     }
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -101,7 +101,7 @@ public class StudentController extends HttpServlet {
         int classroom = Integer.parseInt(request.getParameter("class"));
         Student student1= new Student(name,date,address,phone,email,classroom);
         student.add(student1);
-        response.sendRedirect("http://localhost:8080/studentc08?action=home");
+        response.sendRedirect("http://localhost:8080/student?action=home");
     }
     public void Edit(HttpServletRequest request, HttpServletResponse response) throws IOException {
         int id = Integer.parseInt(request.getParameter("id"));
@@ -113,7 +113,7 @@ public class StudentController extends HttpServlet {
         int classroom = Integer.parseInt(request.getParameter("idClass"));
         Student student1 = new Student(name,date,address,phone,email,classroom);
         student.update(id,student1);
-        response.sendRedirect("http://localhost:8080/studentc08?action=home");
+        response.sendRedirect("http://localhost:8080/student?action=home");
 
     }
 
